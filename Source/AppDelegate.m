@@ -449,7 +449,7 @@
 
 - (IBAction)resetSauce:(id)sender
 {
-    NSBeginAlertSheet(@"Reset Sauce", @"OK", @"Cancel", nil, [NSApp keyWindow], self, nil, @selector(doReset:returnCode:contextInfo:), nil, @"%@",@"Do you want to remove all your data and send the app back to it's original state");
+    NSBeginAlertSheet(@"Reset Sauce", @"OK", @"Cancel", nil, [NSApp keyWindow], self, nil, @selector(doReset:returnCode:contextInfo:), nil, @"%@",@"Do you want to remove all your data and set the app back to its original state?");
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:kDemoAccountName  forKey:kUsername];
