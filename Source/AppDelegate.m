@@ -1068,6 +1068,8 @@ NSComparisonResult dcmp(id arg1, id arg2, void *dummy)
                 browser = @"iPhone";
             else if([browser isEqualToString:@"ipad"])
                 browser = @"iPad";
+			else if([browser isEqualToString:@"iexplore"])
+				browser = @"Internet Explorer";
             else if([browser isEqualToString:@"googlechrome"] || [browser isEqualToString:@"chrome"])
                 browser = @"Google Chrome";
             else
