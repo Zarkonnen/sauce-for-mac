@@ -348,7 +348,7 @@
                 sessionIndxs[curTabIndx] = [sender selectedRowInColumn:1];
             else
             {
-                NSBeginAlertSheet(@"Browser Unavailable", @"OK", @"Sign up", nil, [NSApp keyWindow], self, nil, @selector(doSignup:returnCode:contextInfo:), nil, @"%@", @"This browser is not available to free account users.");
+                NSBeginAlertSheet(@"Browser Unavailable", @"OK", @"Sign up", nil, [NSApp keyWindow], self, nil, @selector(doSignup:returnCode:contextInfo:), nil, @"%@", @"This browser becomes available once you sign up for a free Sauce Labs account.");
                 return;
             }
         }
