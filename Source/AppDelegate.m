@@ -449,7 +449,7 @@
 
 - (IBAction)resetSauce:(id)sender
 {
-    NSBeginAlertSheet(@"Reset Sauce", @"OK", @"Cancel", nil, [NSApp keyWindow], self, nil, @selector(doReset:returnCode:contextInfo:), nil, @"%@",@"Do you want to remove all your data and send the app back to it's original state");
+    NSBeginAlertSheet(@"Reset Sauce", @"OK", @"Cancel", nil, [NSApp keyWindow], self, nil, @selector(doReset:returnCode:contextInfo:), nil, @"%@",@"Do you want to remove all your data and set the app back to its original state?");
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:kDemoAccountName  forKey:kUsername];
@@ -971,7 +971,7 @@ NSComparisonResult dcmp(id arg1, id arg2, void *dummy)
     oimgs[5] = [[NSImage alloc] initByReferencingFile:path];
     [oimgs[5] setSize:isz];
     
-    NSString *osStr[kNumTabs] = {@"  Windows XP", @"  Windows 7", @"  Windows 8", @"  Linux", @"  Apple IOS", @"  Apple OSX"};
+    NSString *osStr[kNumTabs] = {@"  Windows XP", @"  Windows 7", @"  Windows 8", @"  Linux", @"  Apple iOS", @"  Apple OSX"};
     
     for(int i=0; i < kNumTabs; i++)
     {
@@ -1065,9 +1065,11 @@ NSComparisonResult dcmp(id arg1, id arg2, void *dummy)
             [tac release];
             NSMutableAttributedString* mas = [[NSMutableAttributedString alloc] initWithAttributedString: as];
             if([browser isEqualToString:@"iphone"])
-                browser = @"IPhone";
+                browser = @"iPhone";
             else if([browser isEqualToString:@"ipad"])
-                browser = @"IPad";
+                browser = @"iPad";
+			else if([browser isEqualToString:@"iexplore"])
+				browser = @"Internet Explorer";
             else if([browser isEqualToString:@"googlechrome"] || [browser isEqualToString:@"chrome"])
                 browser = @"Google Chrome";
             else
