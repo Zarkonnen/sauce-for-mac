@@ -31,6 +31,8 @@
 @synthesize separatorMenuItem;
 @synthesize myaccountMenuItem;
 @synthesize bugsMenuItem;
+@synthesize logoutMenuItem;
+@synthesize loginMenuItem;
 
 @synthesize noTunnel;
 
@@ -372,7 +374,7 @@
     [defaults setObject:kDemoAccountKey  forKey:kAccountkey];
     [defaults setObject:@"" forKey:kUserPassword];
     [[NSApp delegate] prefetchBrowsers];
-    [[NSApp delegate] toggleTunnelDisplay];
+    [[NSApp delegate] toggleTunnelDisplay]; // Also enables/disables menu items correctly.
 }
 
 - (IBAction)showSubscribeDlg:(id)sender
@@ -405,6 +407,8 @@
     BOOL bDemo = [uname isEqualToString:kDemoAccountName];
     [myaccountMenuItem setAction:bDemo?nil:@selector(myAccount:)];
     [bugsMenuItem setAction:bDemo?nil:@selector(bugsAccount:)];
+    [logoutMenuItem setAction:bDemo?nil:@selector(logout:)];
+    [loginMenuItem setAction:bDemo?@selector(showLoginDlg:):nil];
 
     return bDemo;
 }
