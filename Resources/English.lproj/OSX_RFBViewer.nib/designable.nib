@@ -190,7 +190,7 @@
                             <menuItem title="Sign Out" tag="1" id="1533">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="showLoginDlg:" target="1367" id="1549"/>
+                                    <action selector="logout:" target="1367" id="eXm-Vq-VH4"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1532"/>

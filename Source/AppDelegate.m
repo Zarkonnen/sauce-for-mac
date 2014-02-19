@@ -365,6 +365,16 @@
     self.loginCtrlr = [[LoginController alloc] init];
 }
 
+- (IBAction)logout:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:kDemoAccountName  forKey:kUsername];
+    [defaults setObject:kDemoAccountKey  forKey:kAccountkey];
+    [defaults setObject:@"" forKey:kUserPassword];
+    [[NSApp delegate] prefetchBrowsers];
+    [[NSApp delegate] toggleTunnelDisplay];
+}
+
 - (IBAction)showSubscribeDlg:(id)sender
 {
     if(self.optionsCtrlr)       // close the options sheet
