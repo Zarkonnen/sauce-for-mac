@@ -190,7 +190,7 @@
                             <menuItem title="Sign Out" tag="1" id="1533">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="showLoginDlg:" target="1367" id="1549"/>
+                                    <action selector="logout:" target="1367" id="eXm-Vq-VH4"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1532"/>
@@ -318,6 +318,8 @@ VNCViewer by Helmut Maierhofer			(helmut.maierhofer@chello.at)
             <connections>
                 <outlet property="bugsMenuItem" destination="1556" id="1592"/>
                 <outlet property="infoPanel" destination="232" id="1581"/>
+                <outlet property="loginMenuItem" destination="1528" id="Mpq-bA-ghV"/>
+                <outlet property="logoutMenuItem" destination="1533" id="hnI-Ep-bJ6"/>
                 <outlet property="myaccountMenuItem" destination="1555" id="1591"/>
                 <outlet property="separatorMenuItem" destination="1559" id="1590"/>
                 <outlet property="subscribeMenuItem" destination="1561" id="1576"/>

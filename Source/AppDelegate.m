@@ -31,6 +31,8 @@
 @synthesize separatorMenuItem;
 @synthesize myaccountMenuItem;
 @synthesize bugsMenuItem;
+@synthesize logoutMenuItem;
+@synthesize loginMenuItem;
 
 @synthesize noTunnel;
 
@@ -355,6 +357,16 @@
     self.loginCtrlr = [[LoginController alloc] init];
 }
 
+- (IBAction)logout:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:kDemoAccountName  forKey:kUsername];
+    [defaults setObject:kDemoAccountKey  forKey:kAccountkey];
+    [defaults setObject:@"" forKey:kUserPassword];
+    [[NSApp delegate] prefetchBrowsers];
+    [[NSApp delegate] toggleTunnelDisplay]; // Also enables/disables menu items correctly.
+}
+
 - (IBAction)showSubscribeDlg:(id)sender
 {
     if(self.optionsCtrlr)       // close the options sheet
@@ -385,6 +397,8 @@
     BOOL bDemo = [uname isEqualToString:kDemoAccountName];
     [myaccountMenuItem setAction:bDemo?nil:@selector(myAccount:)];
     [bugsMenuItem setAction:bDemo?nil:@selector(bugsAccount:)];
+    [logoutMenuItem setAction:bDemo?nil:@selector(logout:)];
+    [loginMenuItem setAction:bDemo?@selector(showLoginDlg:):nil];
 
     return bDemo;
 }
