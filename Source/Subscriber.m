@@ -176,7 +176,6 @@
 - (IBAction)cancel:(id)sender 
 {
     [self quitSheet];
-    [[NSApp delegate] showLoginDlg:nil];
 }
 
 - (IBAction)signin:(id)sender

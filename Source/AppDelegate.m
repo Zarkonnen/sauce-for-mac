@@ -253,7 +253,7 @@
             [self promptForSubscribing:0];   // prompt for subscribing to get more minutes
             return NO;
         }
-        if([[ScoutWindowController sharedScout] tabCount] > 2)      // user has to be subscribed
+        if([[ScoutWindowController sharedScout] tabCount] > 3)      // user has to be subscribed
         {
             [self promptForSubscribing:1];   // prompt for subscribing to get more tabs
             return NO;
