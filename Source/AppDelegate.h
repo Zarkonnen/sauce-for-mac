@@ -66,6 +66,8 @@
 @property (assign) IBOutlet NSMenuItem *separatorMenuItem;
 @property (assign) IBOutlet NSMenuItem *myaccountMenuItem;
 @property (assign) IBOutlet NSMenuItem *bugsMenuItem;
+@property (assign) IBOutlet NSMenuItem *loginMenuItem;
+@property (assign) IBOutlet NSMenuItem *logoutMenuItem;
 
 @property (retain)SessionController *optionsCtrlr;
 @property (retain)LoginController *loginCtrlr;
